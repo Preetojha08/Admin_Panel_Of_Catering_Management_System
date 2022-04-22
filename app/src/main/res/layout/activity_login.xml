@@ -12,12 +12,11 @@
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/main_layout"
+        android:layout_centerInParent="true"
         android:fontFamily="@font/abril_fatface"
         android:gravity="center"
         android:text=" Welcome \nADMIN "
-        android:layout_centerInParent="true"
-        android:layout_above="@+id/main_layout"
         android:textAllCaps="true"
         android:textColor="@color/purple_700"
         android:textSize="@dimen/_30sdp" />
@@ -28,8 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:padding="@dimen/_5sdp">
-
+        android:padding="@dimen/_10sdp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"
@@ -50,67 +48,63 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout"
                     android:layout_width="0dp"
+                    android:id="@+id/textInputLayout"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:background="@color/white"
                     android:backgroundTint="@color/white"
-                    android:hint="Admin Mail ID"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/purple_900"
                     app:boxBackgroundColor="@color/white"
                     app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/TextInputEditText_admin_mail"
+                        android:id="@+id/textinputedittext_admin_mail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:cursorVisible="false"
-                        android:drawableLeft="@drawable/mailcopy"
+                        android:drawableStart="@drawable/ic_mail"
+                        android:drawableTint="@color/purple_600"
                         android:drawablePadding="@dimen/_10sdp"
+                        android:freezesText="true"
+                        android:text="Admin"
+                        android:hint="Admin Mail ID"
                         android:inputType="textEmailAddress"
-                        android:text="helloworld@gmail.com"
                         android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
-                    android:layout_height="61dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:background="@color/white"
                     android:backgroundTint="@color/white"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/purple_900"
                     app:boxBackgroundColor="@color/white"
                     app:boxBackgroundMode="outline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                    app:passwordToggleTint="@color/purple_600"
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/TextInputEditText_admin_password"
+                        android:id="@+id/textinputedittext_admin_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:cursorVisible="false"
-                        android:drawableStart="@drawable/keycopy"
+                        android:drawableStart="@drawable/ic_key"
+                        android:drawableTint="@color/purple_600"
                         android:drawablePadding="@dimen/_10sdp"
                         android:freezesText="true"
+                        android:text="P@ssw0rd"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:letterSpacing="0.4"
-                        android:text="passw0rd"
                         android:textColor="@color/black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,28 +120,25 @@
             android:layout_marginTop="195dp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:backgroundTint="@color/purple_700"
+            android:fontFamily="@font/abril_fatface"
             android:text="Sign In"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/cardView3" />
 
-        <TextView
-            android:id="@+id/signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:text="Forgot Password"
-            android:textColor="@color/purple_700"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signin_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <TextView
+        android:id="@+id/text_view_forgot_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_100sdp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Forgot Password"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/_15sdp" />
 
 </RelativeLayout>
