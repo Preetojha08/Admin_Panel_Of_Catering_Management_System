@@ -13,4 +13,21 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/abril_fatface</item>
+        <item name="android:shadowColor">#C5C5C5</item>
+        <item name="android:shadowDx">6</item>
+        <item name="android:shadowDy">8</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
 </resources>
