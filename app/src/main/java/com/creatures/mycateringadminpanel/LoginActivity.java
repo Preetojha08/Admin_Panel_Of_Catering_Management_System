@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (str_email.equalsIgnoreCase("admin") && str_pass.equals("P@ssw0rd"))
                 {
-                    startActivity(new Intent(LoginActivity.this,UsersDataActivity.class));
+                    startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                 }
                 else
                 {
