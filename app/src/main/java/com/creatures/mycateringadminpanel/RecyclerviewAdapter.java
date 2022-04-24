@@ -1,6 +1,7 @@
 package com.creatures.mycateringadminpanel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,11 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             @Override
             public void onClick(View view) {
                 int user_id = model_class.getId();
-                Toast.makeText(my_context, ""+user_id, Toast.LENGTH_SHORT).show();
+                String user_email = model_class.getEmail();
+                Intent i = new Intent(my_context,UserDetailsActivity.class);
+                i.putExtra("User_id",user_id);
+                i.putExtra("User_email",user_email);
+                holder.itemView.getContext().startActivity(i);
             }
         });
 
