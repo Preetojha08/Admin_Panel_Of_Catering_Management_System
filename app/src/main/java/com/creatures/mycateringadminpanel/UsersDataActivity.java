@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -26,6 +29,7 @@ public class UsersDataActivity extends AppCompatActivity {
     private static final String URL_PRODUCTS ="https://preetojhadatabasetrail.000webhostapp.com/signup_login_test/fetch_data.php";
 
     List<Model_Class> users_data_list;
+    ImageView empty_imageview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +44,25 @@ public class UsersDataActivity extends AppCompatActivity {
         recycler_view_usersdata.setHasFixedSize(true);
         recycler_view_usersdata.setLayoutManager(new LinearLayoutManager(this));
 
+        empty_imageview=(ImageView)findViewById(R.id.image_view_users_database);
+        empty_imageview.setVisibility(View.GONE);
+
         users_data_list = new ArrayList<>();
 
-        loadUsersData();
+        int a = getItemCount();
 
+        if (a == 0)
+        {
+            empty_imageview.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+        }
+
+        loadUsersData();
+        
+    }
+
+    public int getItemCount() {
+        return (null != users_data_list ? users_data_list.size() : 0);
     }
 
     private void loadUsersData()
@@ -66,6 +85,7 @@ public class UsersDataActivity extends AppCompatActivity {
                                 user_data_obj.getString("password"),
                                 user_data_obj.getString("email"),
                                 user_data_obj.getString("mobile")
+
                         ));
                     }
                     /*ProductsAdapter adapter = new ProductsAdapter(MainActivity.this, productList);
@@ -73,6 +93,7 @@ public class UsersDataActivity extends AppCompatActivity {
 
                     RecyclerviewAdapter recyclerviewAdapter = new RecyclerviewAdapter(UsersDataActivity.this, users_data_list);
                     recycler_view_usersdata.setAdapter(recyclerviewAdapter);
+                    empty_imageview.setVisibility(View.GONE);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

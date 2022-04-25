@@ -28,8 +28,8 @@
                 android:paddingVertical="@dimen/_10sdp">
 
                 <ImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:tint="@color/purple_700"
                     android:layout_marginHorizontal="@dimen/_10sdp"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/image_view_layout"
-                android:paddingVertical="@dimen/_10sdp">
+                android:paddingVertical="@dimen/_15sdp">
 
                 <TextView
                     android:id="@+id/text_view_users_data_username"
@@ -55,12 +55,12 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/text_view_users_data_user_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/text_view_users_data_user_email"
                     android:layout_below="@+id/text_view_users_data_username"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/adamina"
                     android:text="useremail@gmail.com"
                     android:textColor="@color/white"
