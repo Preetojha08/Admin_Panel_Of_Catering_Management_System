@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,21 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_home"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
-        android:layout_alignParentTop="true"
-        app:titleTextColor="@color/purple_700"
-        app:titleTextAppearance="@style/ToolbarTitleStyle"/>
+        android:layout_height="match_parent">
 
-    <include
-        layout="@layout/home_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_home" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_500"
+            android:layout_alignParentTop="true"
+            app:titleTextColor="@color/white"
+            app:titleTextAppearance="@style/HomeToolbarTitleStyle"/>
 
+        <include
+            android:id="@+id/home_header_number"
+            layout="@layout/home_numbers_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_home" />
 
+        <include
+            layout="@layout/home_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/home_header_number" />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

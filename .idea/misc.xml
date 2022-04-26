@@ -7,12 +7,14 @@
         <entry key="app/src/main/res/drawable/ic_event.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/ic_phone.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable/layout_border.xml" value="0.142" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/activity_user_details.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_users_data.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/home_content.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/home_numbers_layout.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/usersdata_layout.xml" value="0.25" />
       </map>
     </option>

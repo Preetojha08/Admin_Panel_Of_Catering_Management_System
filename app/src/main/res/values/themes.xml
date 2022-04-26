@@ -30,4 +30,11 @@
         <item name="android:shadowRadius">4</item>
     </style>
 
+    <style name="HomeToolbarTitleStyle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/abril_fatface</item>
+        <item name="android:shadowColor">@color/purple_700</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+
+    </style>
+
 </resources>
