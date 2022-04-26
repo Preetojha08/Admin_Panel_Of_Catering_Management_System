@@ -54,7 +54,7 @@ public class UsersDataActivity extends AppCompatActivity {
         if (a == 0)
         {
             empty_imageview.setVisibility(View.VISIBLE);
-            Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
         }
 
         loadUsersData();

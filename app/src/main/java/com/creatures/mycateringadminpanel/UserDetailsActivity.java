@@ -25,6 +25,7 @@ public class UserDetailsActivity extends AppCompatActivity {
 
     TextInputEditText tiet_username,tiet_useremail,tiet_usernumber,tiet_useraccdate;
     TextView textView_username_heading;
+    TextView textview_search,textview_event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +43,24 @@ public class UserDetailsActivity extends AppCompatActivity {
 
         textView_username_heading=(TextView)findViewById(R.id.text_view_username_profile_title);
 
+        textview_search=(TextView)findViewById(R.id.text_view_searchview);
+        textview_event=(TextView)findViewById(R.id.text_view_event_inquiry);
+
         Intent new_intent = getIntent();
         int id = new_intent.getIntExtra("User_id",0);
         String user_email_id = new_intent.getStringExtra("User_email");
-
+        int s_inquiry = id/2;
+        int einquiry = id/3;
         String user_id = String.valueOf(id);
+        String search_inquiry = Integer.toString((int)s_inquiry);
+        String event_inquiry = String.valueOf(einquiry);
+
+        textview_search.setText(search_inquiry);
+        textview_event.setText(event_inquiry);
+
+       /* Toast.makeText(this, "Event :"+search_inquiry+"Kuch bhi: "+event_inquiry, Toast.LENGTH_SHORT).show();
+        Log.i("ID wala data"," Main ID:"+id+" Search:"+search_inquiry+" Event: "+event_inquiry);
+*/
 
         //Start ProgressBar first (Set visibility VISIBLE)
 
@@ -107,6 +121,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                                     tiet_useremail.setText(email_id);
                                     tiet_usernumber.setText(mobile_phone);
                                     tiet_useraccdate.setText(acc_date);
+
 
                                 }
                             }

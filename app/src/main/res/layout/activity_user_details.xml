@@ -91,7 +91,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/akaya_telivigala"
-                    android:text="2"
+
+                    android:id="@+id/text_view_searchview"
                     android:textColor="@color/purple_500"
                     android:textSize="20sp" />
 
@@ -123,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/akaya_telivigala"
-                    android:text="0"
+                    android:id="@+id/text_view_event_inquiry"
                     android:textColor="@color/purple_500"
                     android:textSize="20sp" />
 

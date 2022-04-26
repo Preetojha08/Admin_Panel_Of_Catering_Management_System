@@ -24,10 +24,10 @@
         android:id="@+id/recycler_view_user_data"/>
 
     <ImageView
+        android:id="@+id/image_view_users_database"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_200sdp"
         android:layout_centerInParent="true"
-        android:id="@+id/image_view_users_database"
-        android:src="@drawable/fourzerofour"/>
+        android:src="@drawable/no_data" />
 
 </RelativeLayout>
