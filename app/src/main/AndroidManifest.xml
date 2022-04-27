@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCateringAdminPanel">
         <activity
-            android:name=".UserDetailsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".LoginUserDataActivity"
             android:exported="false" />
+        <activity
+            android:name=".UserDetailsActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UsersDataActivity"
             android:exported="false"
