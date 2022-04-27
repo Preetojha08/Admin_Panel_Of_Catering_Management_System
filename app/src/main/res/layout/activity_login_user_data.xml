@@ -20,13 +20,13 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/toolbar_login_users_database"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view_user_data"/>
+        android:id="@+id/recycler_view_login_user_data"/>
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/image_view_login_users_database"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_200sdp"
         android:layout_centerInParent="true"
-        android:src="@drawable/no_data" />
+        android:src="@drawable/no_data" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

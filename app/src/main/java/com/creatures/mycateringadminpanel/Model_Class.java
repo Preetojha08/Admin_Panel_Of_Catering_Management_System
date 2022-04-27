@@ -7,6 +7,14 @@ public class Model_Class {
     private String password;
     private String email;
     private String mobile;
+    private String login_date;
+
+    public Model_Class(int id, String username, String email, String login_date) {
+        this.id = id;
+        this.email = email;
+        this.username = username;
+        this.login_date = login_date;
+    }
 
     public Model_Class(int id, String username, String password, String email, String mobile) {
         this.id = id;
@@ -34,5 +42,9 @@ public class Model_Class {
 
     public String getMobile() {
         return mobile;
+    }
+
+    public String getLogin_date() {
+        return login_date;
     }
 }

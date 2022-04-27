@@ -16,7 +16,8 @@
         <entry key="app/src/main/res/layout/activity_users_data.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/home_content.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/home_numbers_layout.xml" value="0.2947916666666667" />
-        <entry key="app/src/main/res/layout/usersdata_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/login_users_data_layout.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/usersdata_layout.xml" value="0.35346097201767307" />
       </map>
     </option>
   </component>

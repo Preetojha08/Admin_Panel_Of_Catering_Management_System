@@ -31,6 +31,8 @@ public class UsersDataActivity extends AppCompatActivity {
     List<Model_Class> users_data_list;
     ImageView empty_imageview;
 
+    int layout_no = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +93,7 @@ public class UsersDataActivity extends AppCompatActivity {
                     /*ProductsAdapter adapter = new ProductsAdapter(MainActivity.this, productList);
                     recyclerView.setAdapter(adapter);*/
 
-                    RecyclerviewAdapter recyclerviewAdapter = new RecyclerviewAdapter(UsersDataActivity.this, users_data_list);
+                    RecyclerviewAdapter recyclerviewAdapter = new RecyclerviewAdapter(UsersDataActivity.this, users_data_list,layout_no);
                     recycler_view_usersdata.setAdapter(recyclerviewAdapter);
                     empty_imageview.setVisibility(View.GONE);
                 } catch (JSONException e) {
