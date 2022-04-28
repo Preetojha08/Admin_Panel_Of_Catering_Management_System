@@ -30,4 +30,17 @@
         android:layout_centerInParent="true"
         android:src="@drawable/no_data" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/users"
+        app:fabCustomSize="@dimen/_60sdp"
+        app:maxImageSize="@dimen/_30sdp"
+        android:id="@+id/floating_action_button_users_data"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_25sdp"/>
+
 </RelativeLayout>

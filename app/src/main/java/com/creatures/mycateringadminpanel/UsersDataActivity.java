@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +34,8 @@ public class UsersDataActivity extends AppCompatActivity {
 
     int layout_no = 10;
 
+    FloatingActionButton users_data_fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,9 @@ public class UsersDataActivity extends AppCompatActivity {
         recycler_view_usersdata=(RecyclerView) findViewById(R.id.recycler_view_user_data);
         recycler_view_usersdata.setHasFixedSize(true);
         recycler_view_usersdata.setLayoutManager(new LinearLayoutManager(this));
+
+        users_data_fab=(FloatingActionButton)findViewById(R.id.floating_action_button_users_data);
+        users_data_fab.setImageTintMode(null);
 
         empty_imageview=(ImageView)findViewById(R.id.image_view_users_database);
         empty_imageview.setVisibility(View.GONE);
