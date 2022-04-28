@@ -11,14 +11,13 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/_10sdp"
         android:id="@+id/main_cardview_login_usersdata"
-        app:cardMaxElevation="@dimen/_5sdp"
-        app:cardBackgroundColor="@color/purple_200">
+        app:cardMaxElevation="@dimen/_5sdp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/purple_500">
+            android:background="@drawable/layout_border">
 
             <LinearLayout
                 android:id="@+id/image_view_layout"
