@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -51,6 +52,13 @@ public class UsersDataActivity extends AppCompatActivity {
 
         users_data_fab=(FloatingActionButton)findViewById(R.id.floating_action_button_users_data);
         users_data_fab.setImageTintMode(null);
+
+        users_data_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UsersDataActivity.this,AddUserActivity.class));
+            }
+        });
 
         empty_imageview=(ImageView)findViewById(R.id.image_view_users_database);
         empty_imageview.setVisibility(View.GONE);

@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/_10sdp"
         android:id="@+id/main_cardview_usersdata"
-        app:cardMaxElevation="@dimen/_5sdp"
-        app:cardBackgroundColor="@color/purple_500">
+        app:cardMaxElevation="@dimen/_5sdp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/purple_200"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -34,7 +34,7 @@
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/_10sdp"
                     android:src="@drawable/ic_user"
-                    android:tint="@color/purple_200" />
+                    android:tint="@color/purple_900" />
 
             </LinearLayout>
 
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/abril_fatface"
                     android:text="Username"
-                    android:textColor="@color/white"
+                    android:textColor="@color/purple_900"
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold" />
 
@@ -64,7 +64,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:fontFamily="@font/abril_fatface"
                     android:text="useremail@gmail.com"
-                    android:textColor="@color/white"
+                    android:textColor="@color/purple_900"
                     android:textSize="@dimen/_12sdp" />
 
             </RelativeLayout>
