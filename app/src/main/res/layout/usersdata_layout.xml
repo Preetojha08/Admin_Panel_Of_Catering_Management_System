@@ -34,7 +34,7 @@
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/_10sdp"
                     android:src="@drawable/ic_user"
-                    android:tint="@color/purple_900" />
+                    android:tint="@color/colorPrimaryDark" />
 
             </LinearLayout>
 
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/abril_fatface"
                     android:text="Username"
-                    android:textColor="@color/purple_900"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold" />
 
@@ -64,7 +64,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:fontFamily="@font/abril_fatface"
                     android:text="useremail@gmail.com"
-                    android:textColor="@color/purple_900"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/_12sdp" />
 
             </RelativeLayout>

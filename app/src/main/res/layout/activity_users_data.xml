@@ -12,9 +12,9 @@
         android:id="@+id/toolbar_users_database"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
         android:layout_alignParentTop="true"
-        app:titleTextColor="@color/purple_700"
+        android:theme="@style/Toolbar_bg"
+        app:titleTextColor="@color/purple_500"
         app:titleTextAppearance="@style/ToolbarTitleStyle"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/_40sdp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:src="@drawable/users"
         app:fabCustomSize="@dimen/_60sdp"
         app:maxImageSize="@dimen/_30sdp" />

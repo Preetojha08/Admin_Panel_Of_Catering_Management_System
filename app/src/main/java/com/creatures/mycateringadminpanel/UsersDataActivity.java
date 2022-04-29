@@ -56,7 +56,8 @@ public class UsersDataActivity extends AppCompatActivity {
         users_data_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UsersDataActivity.this,AddUserActivity.class));
+                Intent i = new Intent(UsersDataActivity.this,AddUserActivity.class);
+                startActivity(i);
             }
         });
 

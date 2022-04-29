@@ -13,6 +13,7 @@
         android:theme="@style/Theme.MyCateringAdminPanel">
         <activity
             android:name=".AddUserActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".LoginUserDataActivity"
