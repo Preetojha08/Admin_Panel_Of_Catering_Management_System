@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUserActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_user"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:layout_alignParentTop="true"
+        app:titleTextColor="@color/purple_700"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:theme="@style/RedAccent"
+        android:id="@+id/progress_bar_admin_add_user"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:layout_below="@+id/toolbar_add_user"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableLeft="@drawable/ic_new_user"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Mobile Number"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_user_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Email Address"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:drawableLeft="@drawable/ic_mail"
+                android:drawableTint="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Password"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp"
+            app:passwordToggleTint="@color/purple_500">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_user_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_key"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_admin_user_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/purple_500"
+        android:layout_marginBottom="@dimen/_100sdp"
+        android:padding="@dimen/_10sdp"
+        android:fontFamily="@font/abril_fatface"
+        android:textSize="@dimen/_15sdp"
+        android:text="Add User" />
+
+</RelativeLayout>
