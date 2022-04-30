@@ -9,12 +9,16 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
+import com.github.ybq.android.spinkit.style.Wave;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +41,7 @@ public class LoginUserDataActivity extends AppCompatActivity {
     int a = 0;
 
     int layoutno = 20;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +52,14 @@ public class LoginUserDataActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("   Users Login Information");
 
+        progressBar = (ProgressBar)findViewById(R.id.spin_kit_progress_bar);
+        Sprite wave = new DoubleBounce();
+        progressBar.setIndeterminateDrawable(wave);
+
+        progressBar.setVisibility(View.VISIBLE);
+
         login_empty_imageview=(ImageView)findViewById(R.id.image_view_login_users_database);
-        login_empty_imageview.setVisibility(View.VISIBLE);
+        login_empty_imageview.setVisibility(View.GONE);
 
         login_users_recycler_view=(RecyclerView) findViewById(R.id.recycler_view_login_user_data);
         login_users_recycler_view.setHasFixedSize(true);
@@ -60,8 +71,10 @@ public class LoginUserDataActivity extends AppCompatActivity {
         srfl_login_userdatabase.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                srfl_login_userdatabase.setRefreshing(true);
+
                 clearData();
+                progressBar.setVisibility(View.VISIBLE);
+                recyclerviewAdapter.notifyDataSetChanged();
                 srfl_login_userdatabase.setRefreshing(false);
                 loadUsersLoginData();
                 a++;
@@ -83,10 +96,12 @@ public class LoginUserDataActivity extends AppCompatActivity {
 
     private void loadUsersLoginData()
     {
+
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_PRODUCTS, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+                    progressBar.setVisibility(View.GONE);
                     JSONArray array = new JSONArray(response);
 
                     for (int i = 0; i < array.length(); i++) {

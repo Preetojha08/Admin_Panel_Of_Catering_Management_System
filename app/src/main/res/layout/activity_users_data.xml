@@ -17,11 +17,20 @@
         app:titleTextColor="@color/purple_500"
         app:titleTextAppearance="@style/ToolbarTitleStyle"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_below="@+id/toolbar_users_database"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view_user_data"/>
+        android:layout_below="@+id/toolbar_users_database"
+        android:id="@+id/users_database_swipe_refresh_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view_user_data"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     <ImageView
         android:id="@+id/image_view_users_database"
@@ -42,5 +51,14 @@
         android:src="@drawable/add_user"
         app:fabCustomSize="@dimen/_60sdp"
         app:maxImageSize="@dimen/_30sdp" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit_progress_bar_users_data"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/purple_500" />
 
 </RelativeLayout>
