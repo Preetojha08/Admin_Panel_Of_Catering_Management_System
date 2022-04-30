@@ -39,7 +39,7 @@
         android:layout_marginRight="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/_40sdp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:src="@drawable/users"
+        android:src="@drawable/add_user"
         app:fabCustomSize="@dimen/_60sdp"
         app:maxImageSize="@dimen/_30sdp" />
 

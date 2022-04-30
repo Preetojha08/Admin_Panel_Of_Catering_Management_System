@@ -33,8 +33,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/_10sdp"
-                    android:src="@drawable/ic_user"
-                    android:tint="@color/colorPrimaryDark" />
+                    android:src="@drawable/iron_man" />
 
             </LinearLayout>
 

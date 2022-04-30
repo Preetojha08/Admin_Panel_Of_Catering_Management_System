@@ -11,22 +11,30 @@
         android:id="@+id/toolbar_login_users_database"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
         android:layout_alignParentTop="true"
-        app:titleTextColor="@color/purple_700"
+        android:theme="@style/Toolbar_bg"
+        app:titleTextColor="@color/purple_500"
         app:titleTextAppearance="@style/ToolbarTitleStyle"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_below="@+id/toolbar_login_users_database"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view_login_user_data"/>
+        android:layout_below="@+id/toolbar_login_users_database"
+        android:id="@+id/login_users_database_swipe_refresh_layout">
 
-   <!-- <ImageView
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view_login_user_data"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+   <ImageView
         android:id="@+id/image_view_login_users_database"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_200sdp"
+        android:visibility="gone"
         android:layout_centerInParent="true"
-        android:src="@drawable/no_data" />-->
+        android:src="@drawable/no_data" />
 
 </RelativeLayout>
