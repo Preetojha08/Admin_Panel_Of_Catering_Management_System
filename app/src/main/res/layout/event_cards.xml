@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingVertical="@dimen/_6sdp"
+    android:paddingHorizontal="@dimen/_10sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:id="@+id/event_db_card_display"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:backgroundTint="#2D90E0EF"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:scaleType="fitXY"
+                android:backgroundTint="#2D90E0EF"
+                android:id="@+id/event_db_image_view" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:backgroundTint="#000"
+                android:padding="@dimen/_15sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fontFamily="@font/abril_fatface"
+                android:text="Hello Word"
+                android:layout_margin="@dimen/_15sdp"
+                android:id="@+id/event_db_title_text_view"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/purple_700"
+                android:textSize="@dimen/_18sdp" />
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
