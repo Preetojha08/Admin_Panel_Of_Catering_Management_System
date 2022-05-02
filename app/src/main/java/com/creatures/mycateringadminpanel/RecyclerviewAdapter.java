@@ -2,14 +2,24 @@ package com.creatures.mycateringadminpanel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.card.MaterialCardView;
+import com.squareup.picasso.Picasso;
+
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -41,6 +51,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         else if (layout_number==20)
         {
             view = inflater.inflate(R.layout.login_users_data_layout, null);
+        }
+        else if (layout_number==30)
+        {
+            view = inflater.inflate(R.layout.event_cards, null);
         }
         else
         {
@@ -95,6 +109,30 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             });
         }
 
+        if (layout_number == 30)
+        {
+            Model_Class model_class = users_List.get(position);
+
+            holder.event_db_title_tv.setText(model_class.getEvent_name());
+            int event_id = model_class.getEvent_id();
+            String img_link = model_class.getEvent_img_link();
+
+            Log.e("Recycler View Data"," ID: "+event_id+"link: "+img_link);
+
+            try
+            {
+                Picasso.get().load(img_link).into(holder.event_db_img_view);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                Log.e("Recycler View Data part 2"," Error aaya hai");
+            }
+
+
+
+        }
+
     }
 
     @Override
@@ -111,6 +149,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         TextView text_view_login_username,text_view_login_date;
         CardView login_user_cardview;
 
+        MaterialCardView event_db_cardview;
+        ImageView event_db_img_view;
+        TextView event_db_title_tv;
+
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -125,6 +167,12 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
                 text_view_login_username=(TextView) itemView.findViewById(R.id.text_view_login_users_data_username);
                 text_view_login_date=(TextView) itemView.findViewById(R.id.text_view_login_users_data_and_time);
                 login_user_cardview=(CardView) itemView.findViewById(R.id.main_cardview_login_usersdata);
+            }
+            if (layout_number==30)
+            {
+                event_db_cardview=(MaterialCardView) itemView.findViewById(R.id.event_db_card_display);
+                event_db_img_view=(ImageView) itemView.findViewById(R.id.event_db_image_view);
+                event_db_title_tv=(TextView) itemView.findViewById(R.id.event_db_title_text_view);
             }
 
         }
