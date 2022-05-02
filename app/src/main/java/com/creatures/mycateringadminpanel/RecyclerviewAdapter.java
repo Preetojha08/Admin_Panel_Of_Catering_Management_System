@@ -56,6 +56,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         {
             view = inflater.inflate(R.layout.event_cards, null);
         }
+        else if (layout_number==40)
+        {
+            view = inflater.inflate(R.layout.thali_deatils, null);
+        }
         else
         {
             view = inflater.inflate(R.layout.usersdata_layout, null);
@@ -128,9 +132,29 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
                 e.printStackTrace();
                 Log.e("Recycler View Data part 2"," Error aaya hai");
             }
+        }
 
+        if (layout_number == 40)
+        {
+            Model_Class model_class = users_List.get(position);
 
+            holder.thali_db_title_tv.setText(model_class.getUsername());
+            holder.thali_db_dec_tv.setText(model_class.getEmail());
 
+            int event_id = model_class.getId();
+            String img_link = model_class.getLogin_date();
+
+            Log.e("Recycler View Thali Data"," ID: "+event_id+"link: "+img_link);
+
+            try
+            {
+                Picasso.get().load(img_link).into(holder.thali_db_img_view);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                Log.e("Recycler View Data part 2"," Error aaya hai");
+            }
         }
 
     }
@@ -153,6 +177,9 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         ImageView event_db_img_view;
         TextView event_db_title_tv;
 
+        ImageView thali_db_img_view;
+        TextView thali_db_title_tv,thali_db_dec_tv;
+
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -173,6 +200,12 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
                 event_db_cardview=(MaterialCardView) itemView.findViewById(R.id.event_db_card_display);
                 event_db_img_view=(ImageView) itemView.findViewById(R.id.event_db_image_view);
                 event_db_title_tv=(TextView) itemView.findViewById(R.id.event_db_title_text_view);
+            }
+            if (layout_number==40)
+            {
+                thali_db_title_tv=(TextView) itemView.findViewById(R.id.thali_details_title_textview);
+                thali_db_dec_tv=(TextView) itemView.findViewById(R.id.thali_details_dec_textview);
+                thali_db_img_view=(ImageView) itemView.findViewById(R.id.thali_details_imageview);
             }
 
         }

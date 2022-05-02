@@ -23,6 +23,20 @@ public class Model_Class {
     private int event_price;
     private String event_issuing_date;
 
+    //About Thalis Details
+
+    private int thali_id;
+    private String thali_name;
+    private String thali_img_link;
+    private String thali_desc;
+
+
+    private int thali_counter;
+    private String thali_price;
+    private String thali_issuing_date;
+
+
+
     public Model_Class(int event_id, String event_name,String event_img_link) {
         this.event_id = event_id;
         this.event_name = event_name;
@@ -72,7 +86,6 @@ public class Model_Class {
 
     //getter method for events details
 
-
     public int getEvent_id() {
         return event_id;
     }
@@ -85,5 +98,19 @@ public class Model_Class {
         return event_img_link;
     }
 
+    //About method for Thali details
+
+
+    public int getThali_id() {
+        return thali_id;
+    }
+
+    public String getThali_name() {
+        return thali_name;
+    }
+
+    public String getThali_img_link() {
+        return thali_img_link;
+    }
 }
 

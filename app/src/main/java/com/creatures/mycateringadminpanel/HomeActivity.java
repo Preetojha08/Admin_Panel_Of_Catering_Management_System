@@ -10,7 +10,7 @@ import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView usersdatabase_card_view,logindatabase_card_view,eventdatabase_card_view;
+    CardView usersdatabase_card_view,logindatabase_card_view,eventdatabase_card_view,thalidatabase_card_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         usersdatabase_card_view=(CardView)findViewById(R.id.cardview_users_datacollection);
         logindatabase_card_view=(CardView)findViewById(R.id.cardview_users_logindatacollection);
         eventdatabase_card_view=(CardView)findViewById(R.id.cardview_events_datacollection);
+        thalidatabase_card_view=(CardView)findViewById(R.id.cardview_thalis_datacollection);
 
 
         usersdatabase_card_view.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +54,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        thalidatabase_card_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                startActivity(new Intent(HomeActivity.this,ThaliDataActivity.class));
+
+            }
+        });
 
 
     }
