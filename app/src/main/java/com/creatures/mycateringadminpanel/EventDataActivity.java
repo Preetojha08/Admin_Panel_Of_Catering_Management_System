@@ -8,12 +8,15 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -32,6 +35,8 @@ public class EventDataActivity extends AppCompatActivity {
     List<Model_Class> events_data_list;
     int layout_no = 30;
 
+    ProgressBar progressbar_event_db;
+
     FloatingActionButton fab_events_db;
 
     @Override
@@ -49,17 +54,24 @@ public class EventDataActivity extends AppCompatActivity {
 
         fab_events_db=(FloatingActionButton)findViewById(R.id.floating_action_button_events_data);
         fab_events_db.setImageTintMode(null);
-        
-        /*srfl_events_db=(SwipeRefreshLayout) findViewById(R.id.recycler_view_events_data);
+
+        progressbar_event_db = (ProgressBar)findViewById(R.id.spin_kit_progress_bar_events_data);
+        Sprite wave = new DoubleBounce();
+        progressbar_event_db.setIndeterminateDrawable(wave);
+        progressbar_event_db.setVisibility(View.VISIBLE);
+
+        srfl_events_db=(SwipeRefreshLayout) findViewById(R.id.events_database_swipe_refresh_layout);
 
         srfl_events_db.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //yaha par refresh hone ke baad ka code aaye ga 
+                //yaha par refresh hone ke baad ka code aaye ga
+                srfl_events_db.setRefreshing(false);
             }
-        });*/
+        });
 
         events_data_list = new ArrayList<>();
+
         loadEventdata();
 
     }
@@ -90,6 +102,7 @@ public class EventDataActivity extends AppCompatActivity {
 
                     recyclerviewAdapter = new RecyclerviewAdapter(EventDataActivity.this, events_data_list,layout_no);
                     recycler_view_events_db.setAdapter(recyclerviewAdapter);
+                    progressbar_event_db.setVisibility(View.GONE);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

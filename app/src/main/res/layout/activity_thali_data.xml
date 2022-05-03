@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_thalis_database"
-        android:id="@+id/events_database_swipe_refresh_layout">
+        android:id="@+id/thalis_database_swipe_refresh_layout">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
@@ -38,8 +38,17 @@
         android:layout_marginRight="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/_40sdp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:src="@drawable/add_event"
+        android:src="@drawable/add_thali"
         app:fabCustomSize="@dimen/_60sdp"
         app:maxImageSize="@dimen/_30sdp" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit_progress_bar_thali_data"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/purple_500" />
 
 </RelativeLayout>

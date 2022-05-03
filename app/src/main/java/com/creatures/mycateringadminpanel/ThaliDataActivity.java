@@ -6,12 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -27,6 +31,8 @@ public class ThaliDataActivity extends AppCompatActivity {
     RecyclerView recyclerview_thali_db;
 
     FloatingActionButton fab_thalis_db;
+
+    ProgressBar progressbar_thali_db;
 
     private static final String URL_PRODUCTS ="https://preetojhadatabasetrail.000webhostapp.com/catering_project/fetch_thali_data.php";
     List<Model_Class> thalis_data_list;
@@ -49,6 +55,11 @@ public class ThaliDataActivity extends AppCompatActivity {
         fab_thalis_db.setImageTintMode(null);
 
         thalis_data_list = new ArrayList<>();
+
+        progressbar_thali_db=(ProgressBar)findViewById(R.id.spin_kit_progress_bar_thali_data);
+        Sprite wave = new DoubleBounce();
+        progressbar_thali_db.setIndeterminateDrawable(wave);
+        progressbar_thali_db.setVisibility(View.VISIBLE);
 
         loadThalisData();
 
@@ -81,6 +92,7 @@ public class ThaliDataActivity extends AppCompatActivity {
 
                     recyclerviewAdapter = new RecyclerviewAdapter(ThaliDataActivity.this, thalis_data_list,layout_no);
                     recyclerview_thali_db.setAdapter(recyclerviewAdapter);
+                    progressbar_thali_db.setVisibility(View.GONE);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
