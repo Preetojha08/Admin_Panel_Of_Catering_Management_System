@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCateringAdminPanel">
         <activity
-            android:name=".ThaliDataActivity"
+            android:name=".AddThaliDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
+        <activity
+            android:name=".ThaliDataActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EventDataActivity"
             android:exported="false"
