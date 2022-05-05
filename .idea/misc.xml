@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/layout_border.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/view_layout_border.xml" value="0.142" />
+        <entry key="app/src/main/res/layout/activity_add_event.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_add_thali_detail.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_event_data.xml" value="0.2947916666666667" />
