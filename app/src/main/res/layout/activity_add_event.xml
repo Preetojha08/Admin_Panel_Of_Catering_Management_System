@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_event_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:titleTextColor="@color/purple_700" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:theme="@style/RedAccent"
+        android:id="@+id/progress_bar_admin_add_user"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:layout_below="@+id/toolbar_add_event_detail"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Name"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_event_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableLeft="@drawable/ic_thing_name"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Event Description"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_event_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableLeft="@drawable/ic_description"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Event Menu"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_event_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableLeft="@drawable/ic_menu"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Event Counter"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_event_counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:drawableLeft="@drawable/ic_stall"
+                android:drawableTint="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Event Price"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp"
+            app:passwordToggleTint="@color/purple_500">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_event_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_money"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Event Image Link"
+            android:textColor="@color/purple_500"
+            android:textColorHint="@color/purple_500"
+            android:textSize="16sp"
+            app:passwordToggleTint="@color/purple_500">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_admin_add_event_img_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_link"
+                android:drawableTint="@color/purple_500"
+                android:fontFamily="@font/abril_fatface"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/purple_500"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_admin_event_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_100sdp"
+        android:backgroundTint="@color/purple_500"
+        android:fontFamily="@font/abril_fatface"
+        android:padding="@dimen/_10sdp"
+        android:text="Add Thali"
+        android:textSize="@dimen/_15sdp" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit_progress_bar_add_event_data"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/purple_500" />
+
+</RelativeLayout>
