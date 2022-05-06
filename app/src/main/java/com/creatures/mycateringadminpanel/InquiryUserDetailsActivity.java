@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +20,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class UserDetailsActivity extends AppCompatActivity {
+public class InquiryUserDetailsActivity extends AppCompatActivity {
 
     TextInputEditText tiet_username,tiet_useremail,tiet_usernumber,tiet_useraccdate,tiet_userinquiry;
     TextView textView_username_heading;
@@ -37,8 +34,7 @@ public class UserDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_details);
-
+        setContentView(R.layout.activity_inquiry_user_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_users_details);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("   User Details");
@@ -85,7 +81,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         else
         {
             date_textInputLayout.setVisibility(View.VISIBLE);
-            inquiry_textInputLayout.setVisibility(View.GONE);
+            inquiry_textInputLayout.setVisibility(View.INVISIBLE);
         }
 
        /* Toast.makeText(this, "Event :"+search_inquiry+"Kuch bhi: "+event_inquiry, Toast.LENGTH_SHORT).show();
@@ -119,15 +115,15 @@ public class UserDetailsActivity extends AppCompatActivity {
                         String result = putData.getResult();
                         if (result.equals("Some Thing is Wrong"))
                         {
-                            Toast.makeText(UserDetailsActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(InquiryUserDetailsActivity.this, ""+result, Toast.LENGTH_SHORT).show();
                         }
                         else if (result.equals("All fields are required"))
                         {
-                            Toast.makeText(UserDetailsActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(InquiryUserDetailsActivity.this, ""+result, Toast.LENGTH_SHORT).show();
                         }
                         else if (result.equals("Error:"))
                         {
-                            Toast.makeText(UserDetailsActivity.this, ""+result, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(InquiryUserDetailsActivity.this, ""+result, Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
