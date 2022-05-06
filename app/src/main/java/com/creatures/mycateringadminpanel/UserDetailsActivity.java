@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class UserDetailsActivity extends AppCompatActivity {
     TextView textview_search,textview_event;
     String inquiry;
 
+    LinearLayout ll_inquiry_1,ll_event_2;
+
     TextInputLayout inquiry_textInputLayout,date_textInputLayout;
 
     @Override
@@ -45,6 +48,9 @@ public class UserDetailsActivity extends AppCompatActivity {
         tiet_usernumber=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_mobile);
         tiet_useraccdate=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_createtiondate);
         tiet_userinquiry=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_inquiry);
+
+        ll_inquiry_1=(LinearLayout)findViewById(R.id.linearLayout2);
+        ll_event_2=(LinearLayout)findViewById(R.id.linearLayout3);
 
         inquiry_textInputLayout = (TextInputLayout)findViewById(R.id.TextInputLayout_inquiry_layout);
         date_textInputLayout = (TextInputLayout)findViewById(R.id.TextInputLayout_date);
@@ -73,11 +79,13 @@ public class UserDetailsActivity extends AppCompatActivity {
         {
             inquiry_textInputLayout.setVisibility(View.VISIBLE);
             date_textInputLayout.setVisibility(View.GONE);
+            //layout_constraintVertical_bias
+
         }
         else
         {
             date_textInputLayout.setVisibility(View.VISIBLE);
-            inquiry_textInputLayout.setVisibility(View.GONE);
+            inquiry_textInputLayout.setVisibility(View.INVISIBLE);
         }
 
        /* Toast.makeText(this, "Event :"+search_inquiry+"Kuch bhi: "+event_inquiry, Toast.LENGTH_SHORT).show();

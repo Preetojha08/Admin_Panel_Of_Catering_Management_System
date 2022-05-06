@@ -184,7 +184,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             holder.inquiry_cardview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(my_context,UserDetailsActivity.class);
+                    Intent i = new Intent(my_context,InquiryUserDetailsActivity.class);
                     i.putExtra("User_id",id);
                     i.putExtra("User_email",email);
                     i.putExtra("inquiry_layout",inquiry_layout);
