@@ -224,6 +224,33 @@
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_10sdp"
                     app:boxBackgroundMode="outline"
+                    android:hint="User Inquiry"
+                    android:editable="false"
+                    android:id="@+id/TextInputLayout_inquiry_layout"
+                    android:textColorHint="@color/purple_700"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:focusable="false"
+                        android:id="@+id/text_input_edit_text_usersdata_user_inquiry"
+                        android:drawableStart="@drawable/ic_inquiry"
+                        android:textColorHint="@color/purple_700"
+                        android:drawableTint="@color/purple_700"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/adamina"
+                        android:text="Inquiry"
+                        android:inputType="textMultiLine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:boxBackgroundMode="outline"
+                    android:id="@+id/TextInputLayout_date"
                     android:hint="Account Creation Data"
                     android:editable="true"
                     android:textColorHint="@color/purple_700"

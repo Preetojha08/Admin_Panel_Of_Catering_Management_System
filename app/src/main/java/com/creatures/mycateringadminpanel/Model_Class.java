@@ -36,8 +36,22 @@ public class Model_Class {
     private String thali_issuing_date;
 
 
+    private int userid;
+    private int inquiryId;
+    private String inq_1;
+    private String inq_2;
 
-    public Model_Class(int event_id, String event_name,String event_img_link) {
+
+    public Model_Class(int userid, int inquiryId, String username,String inq_1, String inq_2,String email) {
+        this.userid = userid;
+        this.inquiryId = inquiryId;
+        this.username = username;
+        this.inq_1 = inq_1;
+        this.inq_2 = inq_2;
+        this.email = email;
+    }
+
+    public Model_Class(int event_id, String event_name, String event_img_link) {
         this.event_id = event_id;
         this.event_name = event_name;
         this.event_img_link = event_img_link;
@@ -112,5 +126,23 @@ public class Model_Class {
     public String getThali_img_link() {
         return thali_img_link;
     }
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public int getInquiryId() {
+        return inquiryId;
+    }
+
+    public String getInq_1() {
+        return inq_1;
+    }
+
+    public String getInq_2() {
+        return inq_2;
+    }
+
+
 }
 

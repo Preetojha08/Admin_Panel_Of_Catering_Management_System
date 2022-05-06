@@ -60,6 +60,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         {
             view = inflater.inflate(R.layout.thali_deatils, null);
         }
+        else if (layout_number==50)
+        {
+            view = inflater.inflate(R.layout.inquiry_layout, null);
+        }
         else
         {
             view = inflater.inflate(R.layout.usersdata_layout, null);
@@ -157,6 +161,40 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             }
         }
 
+        if(layout_number==50)
+        {
+            Model_Class model_class = users_List.get(position);
+
+            holder.inquiry_username_tv.setText(model_class.getUsername());
+            String inq_1 = model_class.getInq_1();
+            String inq_2 = model_class.getInq_2();
+
+            String up_inq_1 = inq_1.replace("null,","");
+            String up_inq_2 = inq_2.replace("null,","");
+
+            up_inq_1 = up_inq_1.replace("null.","");
+            up_inq_2 = up_inq_2.replace("null.","");
+
+            String final_inq = up_inq_1.trim()+" and "+up_inq_2.trim();
+            holder.inquiry_desc_tv.setText(final_inq);
+            int id = model_class.getUserid();
+            String email = model_class.getEmail();
+            int inquiry_layout=100;
+
+            holder.inquiry_cardview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(my_context,UserDetailsActivity.class);
+                    i.putExtra("User_id",id);
+                    i.putExtra("User_email",email);
+                    i.putExtra("inquiry_layout",inquiry_layout);
+                    i.putExtra("User_inquiry",final_inq);
+                    holder.itemView.getContext().startActivity(i);
+                }
+            });
+
+        }
+
     }
 
     @Override
@@ -179,6 +217,9 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
         ImageView thali_db_img_view;
         TextView thali_db_title_tv,thali_db_dec_tv;
+
+        TextView inquiry_username_tv,inquiry_desc_tv;
+        CardView inquiry_cardview;
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -206,6 +247,12 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
                 thali_db_title_tv=(TextView) itemView.findViewById(R.id.thali_details_title_textview);
                 thali_db_dec_tv=(TextView) itemView.findViewById(R.id.thali_details_dec_textview);
                 thali_db_img_view=(ImageView) itemView.findViewById(R.id.thali_details_imageview);
+            }
+            if (layout_number==50)
+            {
+                inquiry_username_tv=(TextView) itemView.findViewById(R.id.text_view_inquiry_users_data_username);
+                inquiry_desc_tv=(TextView) itemView.findViewById(R.id.text_view_inquiry_users_inquiry);
+                inquiry_cardview=(CardView) itemView.findViewById(R.id.main_cardview_inquiry_usersdata);
             }
 
         }

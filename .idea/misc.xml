@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_event_data.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2222222222222222" />
+        <entry key="app/src/main/res/layout/activity_inquiry_data.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_login_user_data.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28072916666666664" />
@@ -23,13 +24,14 @@
         <entry key="app/src/main/res/layout/event_cards.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/home_content.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/home_numbers_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/inquiry_layout.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/login_users_data_layout.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/thali_deatils.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/usersdata_layout.xml" value="0.35346097201767307" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

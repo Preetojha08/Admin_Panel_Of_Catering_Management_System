@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -31,7 +33,7 @@ public class ThaliDataActivity extends AppCompatActivity {
     RecyclerView recyclerview_thali_db;
 
     FloatingActionButton fab_thalis_db;
-
+    SwipeRefreshLayout thali_srl;
     ProgressBar progressbar_thali_db;
 
     private static final String URL_PRODUCTS ="https://preetojhadatabasetrail.000webhostapp.com/catering_project/fetch_thali_data.php";
@@ -54,6 +56,13 @@ public class ThaliDataActivity extends AppCompatActivity {
         fab_thalis_db=(FloatingActionButton)findViewById(R.id.floating_action_button_thalis_data);
         fab_thalis_db.setImageTintMode(null);
 
+        fab_thalis_db.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ThaliDataActivity.this,AddThaliDetailActivity.class));
+            }
+        });
+
         thalis_data_list = new ArrayList<>();
 
         progressbar_thali_db=(ProgressBar)findViewById(R.id.spin_kit_progress_bar_thali_data);
@@ -61,12 +70,23 @@ public class ThaliDataActivity extends AppCompatActivity {
         progressbar_thali_db.setIndeterminateDrawable(wave);
         progressbar_thali_db.setVisibility(View.VISIBLE);
 
+        thali_srl=(SwipeRefreshLayout)findViewById(R.id.thalis_database_swipe_refresh_layout);
+        thali_srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                thali_srl.setRefreshing(true);
+                loadThalisData();
+                thali_srl.setRefreshing(false);
+            }
+        });
+
         loadThalisData();
 
     }
 
     private void loadThalisData()
     {
+        progressbar_thali_db.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_PRODUCTS, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

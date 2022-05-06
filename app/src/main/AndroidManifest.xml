@@ -6,15 +6,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_admin_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_admin_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCateringAdminPanel">
         <activity
-            android:name=".AddEventActivity"
+            android:name=".InquiryDataActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
+        <activity
+            android:name=".AddEventActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddThaliDetailActivity"
             android:exported="false"

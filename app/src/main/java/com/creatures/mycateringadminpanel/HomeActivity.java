@@ -10,7 +10,7 @@ import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView usersdatabase_card_view,logindatabase_card_view,eventdatabase_card_view,thalidatabase_card_view;
+    CardView usersdatabase_card_view,logindatabase_card_view,eventdatabase_card_view,thalidatabase_card_view,inquirydatabase_card_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         logindatabase_card_view=(CardView)findViewById(R.id.cardview_users_logindatacollection);
         eventdatabase_card_view=(CardView)findViewById(R.id.cardview_events_datacollection);
         thalidatabase_card_view=(CardView)findViewById(R.id.cardview_thalis_datacollection);
+        inquirydatabase_card_view=(CardView)findViewById(R.id.cardview_inquiry_datacollection);
 
 
         usersdatabase_card_view.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(HomeActivity.this,AddEventActivity.class));
+                startActivity(new Intent(HomeActivity.this,EventDataActivity.class));
 
             }
         });
@@ -58,7 +59,16 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(HomeActivity.this,AddThaliDetailActivity.class));
+                startActivity(new Intent(HomeActivity.this,ThaliDataActivity.class));
+
+            }
+        });
+
+        inquirydatabase_card_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(HomeActivity.this,InquiryDataActivity.class));
 
             }
         });

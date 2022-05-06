@@ -85,8 +85,6 @@ public class UsersDataActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 clearData();
-                users_data_progressBar.setVisibility(View.VISIBLE);
-                recyclerviewAdapter.notifyDataSetChanged();
                 users_data_swipeRefreshLayout.setRefreshing(false);
                 loadUsersData();
                 new_a++;
@@ -109,7 +107,7 @@ public class UsersDataActivity extends AppCompatActivity {
 
     private void loadUsersData()
     {
-
+        users_data_progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_PRODUCTS, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

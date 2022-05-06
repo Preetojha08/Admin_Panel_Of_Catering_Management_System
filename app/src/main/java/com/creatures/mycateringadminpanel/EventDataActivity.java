@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -55,6 +56,13 @@ public class EventDataActivity extends AppCompatActivity {
         fab_events_db=(FloatingActionButton)findViewById(R.id.floating_action_button_events_data);
         fab_events_db.setImageTintMode(null);
 
+        fab_events_db.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EventDataActivity.this,AddEventActivity.class));
+            }
+        });
+
         progressbar_event_db = (ProgressBar)findViewById(R.id.spin_kit_progress_bar_events_data);
         Sprite wave = new DoubleBounce();
         progressbar_event_db.setIndeterminateDrawable(wave);
@@ -66,6 +74,8 @@ public class EventDataActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 //yaha par refresh hone ke baad ka code aaye ga
+                srfl_events_db.setRefreshing(true);
+                loadEventdata();
                 srfl_events_db.setRefreshing(false);
             }
         });
@@ -78,6 +88,7 @@ public class EventDataActivity extends AppCompatActivity {
 
     private void loadEventdata()
     {
+        progressbar_event_db.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_PRODUCTS, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

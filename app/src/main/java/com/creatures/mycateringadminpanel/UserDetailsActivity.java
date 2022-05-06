@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import org.json.JSONArray;
@@ -23,9 +24,12 @@ import org.json.JSONObject;
 
 public class UserDetailsActivity extends AppCompatActivity {
 
-    TextInputEditText tiet_username,tiet_useremail,tiet_usernumber,tiet_useraccdate;
+    TextInputEditText tiet_username,tiet_useremail,tiet_usernumber,tiet_useraccdate,tiet_userinquiry;
     TextView textView_username_heading;
     TextView textview_search,textview_event;
+    String inquiry;
+
+    TextInputLayout inquiry_textInputLayout,date_textInputLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,11 @@ public class UserDetailsActivity extends AppCompatActivity {
         tiet_useremail=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_mail);
         tiet_usernumber=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_mobile);
         tiet_useraccdate=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_createtiondate);
+        tiet_userinquiry=(TextInputEditText)findViewById(R.id.text_input_edit_text_usersdata_user_inquiry);
+
+        inquiry_textInputLayout = (TextInputLayout)findViewById(R.id.TextInputLayout_inquiry_layout);
+        date_textInputLayout = (TextInputLayout)findViewById(R.id.TextInputLayout_date);
+        inquiry_textInputLayout.setVisibility(View.GONE);
 
         textView_username_heading=(TextView)findViewById(R.id.text_view_username_profile_title);
 
@@ -47,6 +56,8 @@ public class UserDetailsActivity extends AppCompatActivity {
         textview_event=(TextView)findViewById(R.id.text_view_event_inquiry);
 
         Intent new_intent = getIntent();
+        int layout_counter = new_intent.getIntExtra("inquiry_layout",0);
+        inquiry = new_intent.getStringExtra("User_inquiry");
         int id = new_intent.getIntExtra("User_id",0);
         String user_email_id = new_intent.getStringExtra("User_email");
         int s_inquiry = id/2;
@@ -57,6 +68,17 @@ public class UserDetailsActivity extends AppCompatActivity {
 
         textview_search.setText(search_inquiry);
         textview_event.setText(event_inquiry);
+
+        if (layout_counter == 100)
+        {
+            inquiry_textInputLayout.setVisibility(View.VISIBLE);
+            date_textInputLayout.setVisibility(View.GONE);
+        }
+        else
+        {
+            date_textInputLayout.setVisibility(View.VISIBLE);
+            inquiry_textInputLayout.setVisibility(View.GONE);
+        }
 
        /* Toast.makeText(this, "Event :"+search_inquiry+"Kuch bhi: "+event_inquiry, Toast.LENGTH_SHORT).show();
         Log.i("ID wala data"," Main ID:"+id+" Search:"+search_inquiry+" Event: "+event_inquiry);
@@ -121,6 +143,7 @@ public class UserDetailsActivity extends AppCompatActivity {
                                     tiet_useremail.setText(email_id);
                                     tiet_usernumber.setText(mobile_phone);
                                     tiet_useraccdate.setText(acc_date);
+                                    tiet_userinquiry.setText(inquiry);
 
 
                                 }
