@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (str_email.equalsIgnoreCase("admin") && str_pass.equals("P@ssw0rd"))
                 {
                     startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+                    finish();
                 }
                 else
                 {

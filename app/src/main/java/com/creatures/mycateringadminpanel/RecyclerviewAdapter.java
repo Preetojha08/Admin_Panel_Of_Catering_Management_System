@@ -124,6 +124,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             holder.event_db_title_tv.setText(model_class.getEvent_name());
             int event_id = model_class.getEvent_id();
             String img_link = model_class.getEvent_img_link();
+            String name = model_class.getEvent_name();
 
             Log.e("Recycler View Data"," ID: "+event_id+"link: "+img_link);
 
@@ -136,6 +137,21 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
                 e.printStackTrace();
                 Log.e("Recycler View Data part 2"," Error aaya hai");
             }
+             /*
+            id = getIntent().getExtras().getInt("event_id");
+            event_name= getIntent().getExtras().getString("event_name");
+            */
+
+            holder.event_db_cardview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(my_context,EventDetailsActivity.class);
+                    i.putExtra("event_id",event_id);
+                    i.putExtra("event_name",name);
+
+                    holder.itemView.getContext().startActivity(i);
+                }
+            });
         }
 
         if (layout_number == 40)

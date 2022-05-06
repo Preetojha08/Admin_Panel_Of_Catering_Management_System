@@ -79,7 +79,7 @@
                 app:layout_constraintHorizontal_bias="0.241"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.310">
+                app:layout_constraintVertical_bias="0.300">
 
                 <ImageView
                     android:layout_width="40dp"

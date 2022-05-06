@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCateringAdminPanel">
         <activity
+            android:name=".EventDetailsActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".InquiryUserDetailsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InquiryDataActivity"
             android:exported="false"
