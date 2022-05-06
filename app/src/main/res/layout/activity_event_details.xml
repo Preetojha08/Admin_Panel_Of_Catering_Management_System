@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_single_event_deatils"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:titleTextAppearance="@style/ToolbarTitleStyle"
+            app:titleTextColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:background="@color/purple_200"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:scaleType="fitXY"
+                    android:id="@+id/image_view_single_event_details"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/textview_heading_single_eventdeatils"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:forceDarkAllowed="true"
+                    android:padding="@dimen/_10sdp"
+                    android:fontFamily="@font/abril_fatface"
+                    android:text="Event Name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sdp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/adamina"
+            android:text="Event Description"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_14sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_description"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:id="@+id/textview_items_single_event_description"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:fontFamily="@font/akaya_telivigala"
+                android:paddingRight="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world "
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/adamina"
+            android:text="Important Deatils"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_14sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_menu"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:id="@+id/textview_items_single_eventdeatils"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/akaya_telivigala"
+                android:paddingRight="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world "
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_stall"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:id="@+id/textview_counters_single_eventdeatils"
+                android:padding="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:fontFamily="@font/akaya_telivigala"
+                android:drawablePadding="@dimen/_5sdp"
+                android:paddingRight="@dimen/_4sdp"
+                android:text="3 - 4 Counters Required"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_money"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_money_single_eventdeatils"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:fontFamily="@font/akaya_telivigala"
+                android:paddingRight="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="Approx Budget "
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
